@@ -1,0 +1,16 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Setup poetry
+        uses: snok/install-poetry@v1
+      - name: Setup python
+        uses: actions/setup-python@v4
+      - name: Run main script
+        run: poetry run python main.py
