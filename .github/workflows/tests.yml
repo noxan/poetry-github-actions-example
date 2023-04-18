@@ -12,5 +12,7 @@ jobs:
         uses: snok/install-poetry@v1
       - name: Setup python
         uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
       - name: Run main script
         run: poetry run python main.py
