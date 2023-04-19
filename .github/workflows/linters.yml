@@ -1,0 +1,22 @@
+name: Linters
+
+on: [push]
+
+jobs:
+  linters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Setup poetry
+        uses: snok/install-poetry@v1
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: poetry install
+      - name: pyright
+        uses: jakebailey/pyright-action@v1
+        with:
+          venv-path: ${{ env.VENV }}
