@@ -5,6 +5,8 @@ on: [push]
 jobs:
   tests:
     runs-on: ubuntu-latest
+    env:
+      POETRY_VIRTUALENVS_CREATE: false
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -21,8 +23,6 @@ jobs:
       - name: Setup poetry
         if: steps.poetry-cache.outputs.cache-hit != 'true'
         uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: false
       - name: Install dependencies
         run: poetry install
       - name: Run main script
