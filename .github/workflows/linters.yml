@@ -8,14 +8,14 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Setup poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: false
       - name: Setup python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
+      - name: Setup poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: false
       - name: Show virtual environment
         run: echo ${{ env.VENV }}
       - name: Install dependencies
