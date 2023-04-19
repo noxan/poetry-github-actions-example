@@ -22,6 +22,7 @@ jobs:
         uses: snok/install-poetry@v1
         with:
           virtualenvs-create: false
+          key: poetry
       - name: Install dependencies
         run: poetry install
       - name: pyright
