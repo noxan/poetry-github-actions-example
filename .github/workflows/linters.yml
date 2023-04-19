@@ -42,3 +42,11 @@ jobs:
         with:
           linters: flake8
           run: flake8 main.py
+
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: black
+        uses: psf/black@stable
