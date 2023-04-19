@@ -8,12 +8,21 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Setup poetry
-        uses: snok/install-poetry@v1
       - name: Setup python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
+      - name: Cache Poetry
+        id: poetry-cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.local
+          key: poetry
+      - name: Setup poetry
+        if: steps.poetry-cache.outputs.cache-hit != 'true'
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: false
       - name: Install dependencies
         run: poetry install
       - name: Run main script
