@@ -3,7 +3,7 @@ name: Linters
 on: [push]
 
 jobs:
-  linters:
+  pyright:
     runs-on: ubuntu-latest
     env:
       POETRY_VIRTUALENVS_CREATE: false
