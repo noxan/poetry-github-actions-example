@@ -16,11 +16,7 @@ jobs:
         uses: snok/install-poetry@v1
         with:
           virtualenvs-create: false
-      - name: Show virtual environment
-        run: echo ${{ env.VENV }}
       - name: Install dependencies
         run: poetry install
       - name: pyright
         uses: jakebailey/pyright-action@v1
-        with:
-          venv-path: ${{ env.VENV }}
