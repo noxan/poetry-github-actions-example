@@ -16,6 +16,7 @@ This is an example of how to use [Poetry](https://python-poetry.org/) with Githu
 - https://github.com/snok/install-poetry https://github.com/marketplace/actions/install-poetry-action
 - https://github.com/liskin/gh-problem-matcher-wrap
 - https://jacobian.org/til/github-actions-poetry/
+- [Solution if shell and os are not compatible](https://github.com/orgs/community/discussions/27143)
 
 ## Open issues
 
