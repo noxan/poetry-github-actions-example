@@ -2,16 +2,12 @@ name: Tests
 
 on: [push]
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   tests:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest]
     env:
       POETRY_VIRTUALENVS_CREATE: false
     steps:
