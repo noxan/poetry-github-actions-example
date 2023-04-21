@@ -16,3 +16,15 @@ This is an example of how to use [Poetry](https://python-poetry.org/) with Githu
 - https://github.com/snok/install-poetry https://github.com/marketplace/actions/install-poetry-action
 - https://github.com/liskin/gh-problem-matcher-wrap
 - https://jacobian.org/til/github-actions-poetry/
+
+## Open issues
+
+1. Poetry caching does not work on macOS
+    ```
+          - name: Cache poetry
+            id: poetry-cache
+            uses: actions/cache@v3
+            with:
+              path: ~/.local
+              key: poetry-${{runner.os}}
+    ```
