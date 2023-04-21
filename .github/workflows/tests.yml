@@ -22,7 +22,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.local
-          key: poetry
+          key: poetry-${{runner.os}}
       - name: Setup poetry
         if: steps.poetry-cache.outputs.cache-hit != 'true'
         uses: snok/install-poetry@v1
