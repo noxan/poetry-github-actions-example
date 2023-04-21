@@ -2,6 +2,10 @@ name: Tests
 
 on: [push]
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   tests:
     runs-on: ${{matrix.os}}
